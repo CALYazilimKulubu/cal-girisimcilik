@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Çemberlitaş Yazılım Kulübü</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  <nav>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Kulüp Logosu" />
+      </a>
+      <span>Çemberlitaş Yazılım Kulübü</span>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="etkinlikler.html">Etkinlikler</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="iletisim.html">İletişim</a>
+    </div>
+  </nav>
+</header>
+
+
+  <section class="hero">
+    <div class="slider">
+      <img src="images/img1.jpeg" class="slide active" alt="Etkinlik 1">
+      <img src="images/img2.jpeg" class="slide" alt="Etkinlik 2">
+      <img src="images/img3.jpeg" class="slide" alt="Etkinlik 3">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+    <h1>Geleceği Birlikte Kodlayalım</h1>
+    <p>Yazılım kulübü ile öğren, geliştir, paylaş!</p>
+    <button>Bize Katıl</button>
+  </section>
+  
+  <script src="slider.js"></script>
+<script>
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+<script>
+  const toggle = document.getElementById('mobile-menu');
+  const nav = document.getElementById('nav-links');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+  <footer>
+    © 2025 Çemberlitaş Yazılım Kulübü. Tüm hakları saklıdır.
+  </footer>
+
+</body>
+</html>
