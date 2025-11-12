@@ -3,64 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Çemberlitaş Yazılım Kulübü</title>
+  <title>Çemberlitaş Girişimcilik Kulübü</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Genel stil */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background-image: url('images/zirve25.jpeg'); /* Büyük arkaplan resmi */
+      background-size: cover;       /* Ekranı tamamen kaplar */
+      background-repeat: no-repeat; /* Tekrar etmez */
+      background-position: center;  /* Ortalanır */
+      min-height: 100vh;
+    }
+
+    /* Header & Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo img {
+      height: 50px;
+      vertical-align: middle;
+    }
+
+    .logo span {
+      margin-left: 10px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    /* Menü linkleri */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
+
+    /* Hamburger ikon */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Hero bölümü */
+    .hero {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 20px 0;
+    }
+
+    .hero button {
+      padding: 12px 25px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #ffcc00;
+      color: #333;
+      transition: background-color 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #e6b800;
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.7);
+      margin-top: 40px;
+    }
+
+    /* Mobil düzenleme */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        flex-direction: column;
+        width: 200px;
+        background-color: rgba(0,0,0,0.9);
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-  <nav>
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/logo.png" alt="Kulüp Logosu" />
-      </a>
-      <span>Çemberlitaş Yazılım Kulübü</span>
-    </div>
-    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html">Ana Sayfa</a>
-      <a href="etkinlikler.html">Etkinlikler</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="iletisim.html">İletişim</a>
-    </div>
-  </nav>
-</header>
-
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Kulüp Logosu" />
+        </a>
+        <span>Çemberlitaş Zirve '25</span>
+      </div>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="etkinlikler.html">Etkinlikler</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
+    </nav>
+  </header>
 
   <section class="hero">
     <div class="slider">
-      <img src="images/img1.jpeg" class="slide active" alt="Etkinlik 1">
-      <img src="images/img2.jpeg" class="slide" alt="Etkinlik 2">
-      <img src="images/img3.jpeg" class="slide" alt="Etkinlik 3">
+      <img src="images/zirve.jpeg" class="slide active" alt="Etkinlik 1">
       <button class="prev">&#10094;</button>
       <button class="next">&#10095;</button>
     </div>
-    <h1>Geleceği Birlikte Kodlayalım</h1>
-    <p>Yazılım kulübü ile öğren, geliştir, paylaş!</p>
-    <button>Bize Katıl</button>
+    <h1>Gelecek</h1>
+    <button>Bilet Satın Al👇</button>
   </section>
   
-  <script src="slider.js"></script>
-<script>
-  const menuToggle = document.getElementById('mobile-menu');
-  const navLinks = document.querySelector('.nav-links');
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
-<script>
-  const toggle = document.getElementById('mobile-menu');
-  const nav = document.getElementById('nav-links');
-
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-</script>
-
   <footer>
-    © 2025 Çemberlitaş Yazılım Kulübü. Tüm hakları saklıdır.
+    © 2025 Çemberlitaş Girişimcilik Kulübü. Tüm hakları saklıdır.
   </footer>
 
+  <script src="slider.js"></script>
+  <script>
+    // Hamburger menü
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

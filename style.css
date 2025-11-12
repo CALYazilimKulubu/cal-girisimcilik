@@ -1,72 +1,90 @@
+/* GENEL AYARLAR */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
-body {
-  margin: 0;
-  background-color: #f9fafb;
-  color: #1f2937;
-  line-height: 1.6;
-}
+
+
+
+/* HEADER VE NAVBAR */
 header {
-  background-color: #001e46;
-  padding: 15px 30px;
+  background-color: #0e0e0e;
+  padding: 15px 20px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
+
 .logo {
   display: flex;
   align-items: center;
-  height: 40px; /* sabit yükseklik */
-  overflow: visible;
+  height: 40px;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #FAFAFB;
+  color: #fff;
 }
+
 .logo img {
-  width: 60px; /* eskiden 28px idi */
-  height: 60px;
+  height: 70px;
+  width: 70px;
   margin-right: 8px;
-  object-fit: cover;
   border-radius: 6px;
+  object-fit: cover;
 }
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
 .nav-links a {
-  margin-left: 80px;
   text-decoration: none;
-  color: #FAFAFB;
+  color: #fff;
   font-weight: 500;
   transition: color 0.3s;
 }
-.nav-links a:hover {
-  color: #4f46e5;
+
+
+
+/* Menü ikonu (mobil) */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
 }
+
 .hero {
   text-align: center;
   padding: 60px 20px;
-  background-color: #5376eb;
+  background-color: rgba(81, 0, 139, 0.7); /* %70 opak mor */
 }
+
 .hero h1 {
   font-size: 2.5rem;
-  color: #001e46;
+  color: #ffffff;
 }
+
 .hero p {
   font-size: 1.1rem;
   margin-top: 10px;
-  color: #001e46;
+  color: #ffffff;
 }
+
 .hero button {
   margin-top: 30px;
   padding: 12px 24px;
-  background-color: #001e46;
+  background-color: #5d1557;
   color: #FAFAFB;
   border: none;
   border-radius: 12px;
@@ -74,9 +92,10 @@ nav {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.hero button:hover {
-  background-color: #4338ca;
-}
+
+
+
+/* SLIDER */
 .slider {
   position: relative;
   width: 100%;
@@ -87,6 +106,7 @@ nav {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .slide {
   position: absolute;
   top: 0;
@@ -96,12 +116,13 @@ nav {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
-  z-index: 0;
 }
+
 .slide.active {
   opacity: 1;
   z-index: 1;
 }
+
 .slider button {
   position: absolute;
   top: 50%;
@@ -116,27 +137,24 @@ nav {
   z-index: 2;
   transition: background-color 0.3s;
 }
+
 .slider button:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
+
 .prev {
   left: 10px;
 }
 .next {
   right: 10px;
 }
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #001e46;
-  color: #ffffff;
-  margin-top: 60px;
-  font-size: 0.9rem;
-}
+
+/* GALERİ */
 section {
   padding: 60px 20px;
   text-align: center;
 }
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -157,9 +175,11 @@ section {
 .gallery img:hover {
   transform: scale(1.03);
 }
+
+/* OKUL BAĞLANTISI */
 .school-link {
-  background-color: #5376eb;
-  color: #000000;
+  background-color: #51008b;
+  color: #ffffff;
   padding: 60px 20px;
   text-align: center;
 }
@@ -185,25 +205,22 @@ section {
   transition: background-color 0.3s;
 }
 
-.school-button:hover {
-  background-color: #3748a0;
-}
-.contact {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #4f46e5;
+
+
+
+.contact h1,
+.contact p {
+  color: #ffffff;
 }
 
 .contact h1 {
   font-size: 2.2rem;
   margin-bottom: 10px;
-  color: #001e46;
 }
 
 .contact p {
   font-size: 1.1rem;
   margin-bottom: 30px;
-  color: #001e46;
 }
 
 .contact-buttons {
@@ -220,15 +237,7 @@ section {
   text-decoration: none;
   color: #FAFAFB;
   font-weight: 500;
-  transition: background-color 0.3s;
-}
-
-.contact-btn.linkedin {
-  background-color: #001e46;
-}
-
-.contact-btn.instagram {
-  background-color: #e4405f;
+  transition: opacity 0.3s;
 }
 
 .contact-btn:hover {
@@ -240,97 +249,27 @@ section {
   color: #FAFAFB;
   margin-top: 40px;
 }
-/* Menü ikonu - sadece mobilde görünür */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: white;
-}
 
-/* Mobil menü başlangıçta gizli */
-.nav-links {
+/* GÖRSEL SATIRI */
+.image-row {
   display: flex;
+  justify-content: center;
   gap: 20px;
+  margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #001e46;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    padding: 20px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links a {
-    color: white;
-    padding: 10px 0;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-/* GENEL */
-header {
-  background-color: #001e46;
-  padding: 15px 20px;
+.image-row img {
+  max-width: 300px;
+  height: auto;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f61fce;
   color: #fff;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.logo img {
-  height: 40px;
-  margin-right: 10px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #4f46e5;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
+  margin-top: auto;
+  font-size: 0.9rem;
 }
 
 /* MOBİL */
@@ -355,16 +294,4 @@ nav {
   .nav-links.active {
     display: flex;
   }
-}
-
-.image-row {
-  display: flex; 
-  justify-content: center;
-  gap: 20px; 
-  margin-top: 20px;
-}
-
-.image-row img {
-  max-width: 300px;
-  height: auto;
 }

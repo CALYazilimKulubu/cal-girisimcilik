@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobil Menü Örneği</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Üst bar */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+  }
+
+  .topbar h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  /* Hamburger ikon */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  /* Menü */
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #444;
+  }
+
+  .menu a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+  }
+
+  .menu a:hover {
+    background-color: #555;
+  }
+
+  /* Menü açıkken */
+  .menu.show {
+    display: flex;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Logo</h1>
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+<div class="menu" id="menu">
+  <a href="#home">Anasayfa</a>
+  <a href="#about">Hakkımızda</a>
+  <a href="#services">Hizmetler</a>
+  <a href="#contact">İletişim</a>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>
