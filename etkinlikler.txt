@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hakkımızda | Çemberlitaş Girişimcilik Kulübü</title>
-  <!-- Google Fonts -->
+  <title>Etkinlikler | Çemberlitaş Girişimcilik Kulübü</title>
+    <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <style>
     body {
-      background-color: #51008b
+      background-color: #51008b;
+      font-size: 28px;
+      font-family: 'Caveat', cursive;
+      color: #ffcc00;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
     }
 
     footer {
       margin-top: auto;
       text-align: center;
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0,0,0,0.7);
       font-size: 0.9rem;
     }
 
@@ -44,10 +49,10 @@
       font-size: 36px;
       font-family: 'Caveat', cursive;
       color: #ffcc00;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
 
-    /* Menü linkleri */
+        /* Menü linkleri */
     .nav-links {
       display: flex;
       gap: 20px;
@@ -60,15 +65,65 @@
       transition: color 0.3s;
       font-family: 'Caveat', cursive;
       font-size: 28px;
-
     }
 
     .nav-links a:hover {
       color: #ffcc00;
     }
 
-    footer {
-      margin-top: auto;
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      flex: 1;
+    }
+
+    .contact h1 {
+      font-size: 65px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #ffcc00;
+      font-family: 'Caveat', cursive;
+    }
+
+    .contact p {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;              /* Kutunun üstünde gözükmesi için */
+  flex-wrap: wrap;
+}
+
+
+    .contact-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .contact-btn img.icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .school-name {
+      font-size: 20px;
+      margin-top: 40px;
     }
 
     .menu-toggle {
@@ -85,7 +140,7 @@
         right: 0;
         flex-direction: column;
         width: 200px;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0,0,0,0.9);
         display: none;
       }
 
@@ -106,8 +161,8 @@
         </a>
         <span>Çemberlitaş Girişimcilik Kulübü</span>
       </div>
-      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-      <div class="nav-links" id="nav-links">
+            <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <div class="nav-links">
         <a href="index.html">Ana Sayfa</a>
         <a href="etkinlikler.html">Etkinlikler</a>
         <a href="hakkimizda.html">Hakkımızda</a>
@@ -117,34 +172,26 @@
   </header>
 
   <section class="hero">
-    <h1>Biz Kimiz?</h1>
-    <p>Çemberlitaş Girişimcilik Kulübü olarak amacımız; gençleri girişimcilik
-      ekosistemiyle buluşturmak, </p>
-    <p> yenilikçi düşünme
-      kültürünü desteklemek ve öğrencilerin potansiyellerini
-      keşfetmelerine imkan tanımaktır.</p>
-    <p> Etkinliğimiz
-      aracılığıyla da farklı sektörlerden başarılı girişimciler
-      uzmanlar ve liderlerle gençleri</p>
-    <p> bir araya getirerek;
-      onların ilham alabilecekleri, kendilerini
-      geliştirebilecekleri ve geleceğe</p>
-    <p> daha donanımlı adım
-      atabilecekleri bir ortam oluşturmayı hedefliyoruz.</p>
-    </p>
+    <h1>Etkinliklerimiz</h1>
+    <p>Girişimcilik Kulübü olarak okulumuzda çeşitli etkinlikler düzenliyoruz.</p>
+  
   </section>
+  
 
-  <section class="school-link">
-    <h2>Okulumuz Hakkında</h2>
-    <p>Okulumuz ve diğer kulüpler hakkında daha fazla bilgi almak için resmi web sitemizi ziyaret edebilirsiniz.</p>
-    <a href="https://cemberlitasanadolu.meb.k12.tr/" target="_blank" class="school-button">Okul Web Sitesi</a>
+  <section class="hero">
+    <h1>Çemberlitaş Girişimcilik Kulübü</h1>
+    <p>Girişimcilik Kulübü olarak okulumuzda çeşitli etkinlikler düzenliyoruz.</p>
+    <ul style="margin-top: 20px; text-align: left; max-width: 600px; margin-inline: auto;">
+      <li>📚 Çemberlitaş Zirve Etkinlikleri</li>
+      <li>🎉 Sosyal Medya İçerikleri</li>
+      <li>🧠 Okul içi toplantılar ve fikir alışverişleri</li>
+    </ul>
   </section>
 
 
   <footer>
     © 2025 Çemberlitaş Girişimcilik Kulübü. Tüm hakları saklıdır.
   </footer>
-  <script src="java.js"></script>
+<script src="java.js"></script>
 </body>
-
 </html>

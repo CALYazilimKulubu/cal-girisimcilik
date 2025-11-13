@@ -1,4 +1,5 @@
 /* GENEL AYARLAR */
+/*001e46*/
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,17 @@
   font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 /* HEADER VE NAVBAR */
 header {
@@ -54,8 +65,6 @@ nav {
   transition: color 0.3s;
 }
 
-
-
 /* Menü ikonu (mobil) */
 .menu-toggle {
   display: none;
@@ -67,7 +76,8 @@ nav {
 .hero {
   text-align: center;
   padding: 60px 20px;
-  background-color: rgba(81, 0, 139, 0.7); /* %70 opak mor */
+  background-color: rgba(81, 0, 139, 0.7);
+  /* %70 opak mor */
 }
 
 .hero h1 {
@@ -92,8 +102,6 @@ nav {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
-
 
 /* SLIDER */
 .slider {
@@ -145,11 +153,17 @@ nav {
 .prev {
   left: 10px;
 }
+
 .next {
   right: 10px;
 }
 
 /* GALERİ */
+main {
+  flex: 1;
+  /* içerik alanı kalan boşluğu kaplar */
+}
+
 section {
   padding: 60px 20px;
   text-align: center;
@@ -196,7 +210,7 @@ section {
 
 .school-button {
   display: inline-block;
-  background-color: #001e46;
+  background-color: #0e0e0e;
   color: #fff;
   padding: 12px 24px;
   border-radius: 8px;
@@ -205,9 +219,7 @@ section {
   transition: background-color 0.3s;
 }
 
-
-
-
+/* İLETİŞİM */
 .contact h1,
 .contact p {
   color: #ffffff;
@@ -229,6 +241,24 @@ section {
   gap: 20px;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Hafif siyah arka plan */
+  padding: 20px;
+  border-radius: 15px;
+  /* Köşeleri yuvarlatmak için */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  /* Siyah gölge efekti */
+  position: relative;
+  /* Box-shadow için gerekli */
+  z-index: 1;
+  /* Kutunun üstünde kalması için */
+
+  width: fit-content;
+  /* İçerik boyutuna göre genişlik */
+  max-width: 90%;
+  /* Ekran taşmasını önler */
+  margin: 0 auto 20px;
+  /* Ortalamak için */
 }
 
 .contact-btn {
@@ -263,12 +293,12 @@ section {
   height: auto;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #f61fce;
+  background-color: #0e0e0e;
   color: #fff;
-  margin-top: auto;
   font-size: 0.9rem;
 }
 

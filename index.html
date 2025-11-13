@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Çemberlitaş Girişimcilik Kulübü</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+
   <style>
     /* Genel stil */
+    html,
     body {
+      height: 100%;
       margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       font-family: 'Poppins', sans-serif;
       color: white;
-      background-image: url('images/zirve25.jpeg'); /* Büyük arkaplan resmi */
-      background-size: cover;       /* Ekranı tamamen kaplar */
-      background-repeat: no-repeat; /* Tekrar etmez */
-      background-position: center;  /* Ortalanır */
-      min-height: 100vh;
+      background-image: url('images/zirve25.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
+
+    main {
+      flex: 1;
+      /* İçerik alanı kalan boşluğu kaplar */
+    }
+
 
     /* Header & Navbar */
     header {
@@ -32,6 +52,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
+
     }
 
     .logo img {
@@ -42,7 +63,12 @@
     .logo span {
       margin-left: 10px;
       font-weight: 600;
-      font-size: 18px;
+      font-size: 36px;
+      font-family: 'Caveat', cursive;
+      color: #ffcc00;
+      /* Altın rengi */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      /* Hafif gölge */
     }
 
     /* Menü linkleri */
@@ -56,6 +82,9 @@
       color: white;
       font-weight: 500;
       transition: color 0.3s;
+      font-family: 'Caveat', cursive;
+      font-size: 28px;
+
     }
 
     .nav-links a:hover {
@@ -77,7 +106,12 @@
 
     .hero h1 {
       font-size: 48px;
-      margin: 20px 0;
+      margin: auto;
+      font-family: 'Caveat', cursive;
+      color: #ffcc00;
+      /* Altın rengi */
+      font-weight: 1000;
+      /* Kalın yapıldı */
     }
 
     .hero button {
@@ -86,9 +120,11 @@
       cursor: pointer;
       border: none;
       border-radius: 5px;
-      background-color: #ffcc00;
+      background-color: rgba(255, 204, 0, 0.707);
       color: #333;
       transition: background-color 0.3s;
+      font-weight: 1000;
+      /* Kalın yapıldı */
     }
 
     .hero button:hover {
@@ -112,28 +148,36 @@
       display: block;
     }
 
-    .prev, .next {
+    .prev,
+    .next {
       cursor: pointer;
       position: absolute;
-      top: 50%;
+      top: 100%;
       transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.5);
       color: white;
-      padding: 8px 12px;
+      padding: 8px 40px;
       border: none;
       border-radius: 50%;
       font-size: 18px;
     }
 
-    .prev { left: 10px; }
-    .next { right: 10px; }
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
 
     /* Footer */
     footer {
       text-align: center;
       padding: 20px;
-      background-color: rgba(0,0,0,0.7);
-      margin-top: 40px;
+      background-color: rgb(0, 0, 0);
+      font-size: 0.9rem;
+      margin-top: auto;
+      /* Footer her zaman altta */
     }
 
     /* Mobil düzenleme */
@@ -144,7 +188,7 @@
         right: 0;
         flex-direction: column;
         width: 200px;
-        background-color: rgba(0,0,0,0.9);
+        background-color: rgba(0, 0, 0, 0.9);
         display: none;
       }
 
@@ -158,6 +202,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -177,29 +222,24 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="slider">
-      <img src="images/zirve.jpeg" class="slide active" alt="Etkinlik 1">
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
-    </div>
-    <h1>Gelecek</h1>
-    <button>Bilet Satın Al👇</button>
-  </section>
-  
+  <main>
+    <section class="hero">
+      <div class="slider">
+        <img src="images/zirve.jpeg" class="slide active" alt="Etkinlik 1">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+      <h1>Çok Yakında!</h1>
+      <button>Bilet Satın Al!</button>
+    </section>
+  </main>
+
   <footer>
     © 2025 Çemberlitaş Girişimcilik Kulübü. Tüm hakları saklıdır.
   </footer>
 
   <script src="slider.js"></script>
-  <script>
-    // Hamburger menü
-    const menuToggle = document.getElementById('mobile-menu');
-    const navLinks = document.getElementById('nav-links');
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+  <script src="java.js"></script>
 </body>
+
 </html>

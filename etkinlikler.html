@@ -1,27 +1,171 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Etkinlikler | Çemberlitaş Girişimcilik Kulübü</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <style>
     body {
-      background-color: #51008b
+      background-color: #51008b;
+      font-size: 28px;
+      font-family: 'Caveat', cursive;
+      color: #ffcc00;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
     }
-    </style>
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      font-size: 0.9rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo img {
+      height: 50px;
+      vertical-align: middle;
+    }
+
+    .logo span {
+      margin-left: 10px;
+      font-weight: 600;
+      font-size: 36px;
+      font-family: 'Caveat', cursive;
+      color: #ffcc00;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Menü linkleri */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-family: 'Caveat', cursive;
+      font-size: 28px;
+    }
+
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
+
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      flex: 1;
+    }
+
+    .contact h1 {
+      font-size: 65px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #ffcc00;
+      font-family: 'Caveat', cursive;
+    }
+
+    .contact p {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+      /* Kutunun üstünde gözükmesi için */
+      flex-wrap: wrap;
+    }
+
+
+    .contact-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .contact-btn img.icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .school-name {
+      font-size: 20px;
+      margin-top: 40px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Mobil düzenleme */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        flex-direction: column;
+        width: 200px;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
   <header>
     <nav>
       <div class="logo">
         <a href="index.html">
           <img src="images/logo.png" alt="Kulüp Logosu" />
         </a>
-        Çemberlitaş Girişimcilik Kulübü
+        <span>Çemberlitaş Girişimcilik Kulübü</span>
       </div>
-      <div class="nav-links">
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <div class="nav-links" id="nav-links">
         <a href="index.html">Ana Sayfa</a>
         <a href="etkinlikler.html">Etkinlikler</a>
         <a href="hakkimizda.html">Hakkımızda</a>
@@ -30,34 +174,12 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Etkinliklerimiz</h1>
-    <p>Yıl boyunca düzenlediğimiz çeşitli yazılım ve teknoloji etkinlikleriyle öğrenmeyi destekliyoruz.</p>
-  
-    <div class="gallery">
-      <img src="images/img1.jpeg" alt="Etkinlik 1">
-      <img src="images/img2.jpeg" alt="Etkinlik 2">
-      <img src="images/img3.jpeg" alt="Etkinlik 3">
-      <img src="images/img4.jpeg" alt="Etkinlik 4">
-      <img src="images/img5.png" alt="Etkinlik 5">
-    </div>
-  </section>
-  
 
-  <section class="hero">
-    <h1>Çemberlitaş Girişimcilik Kulübü</h1>
-    <p>Yıl boyunca düzenlediğimiz çeşitli yazılım ve teknoloji etkinlikleriyle öğrenmeyi destekliyoruz.</p>
-    <ul style="margin-top: 20px; text-align: left; max-width: 600px; margin-inline: auto;">
-      <li></li>
-      <li>🤖 Modüler, Video Destekli Dersler</li>
-      <li>🎮 Online Dersler</li>
-      <li>🧠 Konferans salonundaki toplantılar, dersler</li>
-    </ul>
-  </section>
 
   <footer>
     © 2025 Çemberlitaş Girişimcilik Kulübü. Tüm hakları saklıdır.
   </footer>
-
+  <script src="java.js"></script>
 </body>
+
 </html>
